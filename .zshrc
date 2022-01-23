@@ -73,7 +73,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode docker python docker docker-compose terraform)
+plugins=(git vscode docker python docker docker-compose terraform command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
