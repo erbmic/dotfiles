@@ -109,18 +109,15 @@ alias la='ls -A'
 alias l='ls -CF'
 
 
-#idea () { /home/michael/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/213.5744.223/bin/idea.sh "$1" > /de> }
-#code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-
-
-# alias to use dotfiles for the --bare git dotfiles folder
-alias dotfiles='/usr/bin/git --git-dir=/home/michael/.dotfiles/ --work-tree=/home/michael'
-
-
 # run intellij from command line
 # https://stackoverflow.com/questions/57309605/how-to-run-intellij-idea-from-terminal-in-detached-mode
 function idea() {
     /home/michael/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/213.6461.79/bin/idea.sh "$1" > /dev/null 2>&1 &
 }
+
+
+# alias to use dotfiles for the --bare git dotfiles folder
+alias dotfiles='/usr/bin/git --git-dir=/home/michael/.dotfiles/ --work-tree=/home/michael'
+
 
 
