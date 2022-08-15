@@ -112,9 +112,12 @@ alias l='ls -CF'
 # run intellij from command line
 # https://stackoverflow.com/questions/57309605/how-to-run-intellij-idea-from-terminal-in-detached-mode
 function idea() {
-    /home/michael/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/221.5591.52/bin/idea.sh "$1" > /dev/null 2>&1 &
+    /home/michael/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.3345.118/bin/idea.sh "$1" > /dev/null 2>&1 &
 }
 
 #
 # alias to use dotfiles for the --bare git dotfiles folder
 alias dotfiles='/usr/bin/git --git-dir=/home/michael/.dotfiles/ --work-tree=/home/michael'
+source <(kubectl completion bash)
+alias k=kubectl
+complete -o default -F __start_kubectl k
