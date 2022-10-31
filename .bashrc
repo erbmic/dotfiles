@@ -125,6 +125,9 @@ function idea() {
 
 # alias to use dotfiles for the --bare git dotfiles folder
 alias dotfiles='/usr/bin/git --git-dir=/home/michael/.dotfiles/ --work-tree=/home/michael'
+
+#
+# kubectl autocompletion
 source <(kubectl completion bash)
 alias k=kubectl
 complete -o default -F __start_kubectl k
