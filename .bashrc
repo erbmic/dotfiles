@@ -120,7 +120,7 @@ fi
 # run intellij from command line
 # https://stackoverflow.com/questions/57309605/how-to-run-intellij-idea-from-terminal-in-detached-mode
 function idea() {
-    /home/michael/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.3345.118/bin/idea.sh "$1" > /dev/null 2>&1 &
+    /home/michael/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/222.4345.14/bin/idea.sh "$1" > /dev/null 2>&1 &
 }
 
 # alias to use dotfiles for the --bare git dotfiles folder
