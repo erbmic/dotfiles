@@ -21,12 +21,12 @@ echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" 
 After this, any file within the $HOME folder can be versioned with normal commands, replacing `git` with your newly created `dotfiles` alias, like:
 
 [source,bash]
-config status
-config add .vimrc
-config commit -m "Add vimrc"
-config add .bashrc
-config commit -m "Add bashrc"
-config push
+dotfiles status
+dotfiles add .vimrc
+dotfiles commit -m "Add vimrc"
+dotfiles add .bashrc
+dotfiles commit -m "Add bashrc"
+dotfiles push
 
 ## Install your dotfiles onto a new system
 
