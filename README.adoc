@@ -34,9 +34,9 @@ I created the following bash script to automate the steps to install it on a new
 
 [source,bash]
 #!/bin/bash
-git clone --bare git@github.com:erbmic/dotfiles.git /home/michael/Documents/test/.dotfiles
+git clone --bare git@github.com:erbmic/dotfiles.git $HOME/.dotfiles
 function dotfiles {
-   /usr/bin/git --git-dir=/home/michael/Documents/test/.dotfiles/ --work-tree=/home/michael/Documents/test $@
+   /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
 mkdir -p .dotfiles-backup
 dotfiles checkout
