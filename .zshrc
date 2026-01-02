@@ -1,5 +1,5 @@
 # env file
-ENV_FILE="$HOME/.zshrc.custom/.zshrc.env"
+ENV_FILE="$HOME/.zshrc.custom/zshrc.env"
 
 if [[ -f "$ENV_FILE" ]]; then
   source "$ENV_FILE"
