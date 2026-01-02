@@ -1,8 +1,16 @@
+# env file
+ENV_FILE="$HOME/.zshrc.custom/.zshrc.env"
+
+if [[ -f "$ENV_FILE" ]]; then
+  source "$ENV_FILE"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/michael/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_DISABLE_COMPFIX="true"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -73,7 +81,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode docker python docker docker-compose terraform command-not-found)
+plugins=(git vscode docker python docker docker-compose terraform command-not-found helm microk8s kubectl ubuntu zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -108,19 +116,25 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-
-# run intellij from command line
-# https://stackoverflow.com/questions/57309605/how-to-run-intellij-idea-from-terminal-in-detached-mode
-function idea() {
-    /home/michael/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/223.7571.182/bin/idea.sh "$1" > /dev/null 2>&1 &
-}
-
 #
 # alias to use dotfiles for the --bare git dotfiles folder
-alias dotfiles='/usr/bin/git --git-dir=/home/michael/.dotfiles/ --work-tree=/home/michael'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias homepull='docker compose pull'
 
 #
 # kubectl autocompletion and alias 
-source <(kubectl completion zsh)
-alias k=kubectl
-complete -o default -F __start_kubectl k
+#source <(kubectl completion zsh)
+#alias k=kubectl
+#complete -o default -F __start_kubectl k
+
+# aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# --- load personal snippets from ~/.zshrc.custom ---
+setopt NULL_GLOB
+for f in "$HOME/.zshrc.custom/"*.zsh "$HOME/.zshrc.custom/"*.sh; do
+  [ -r "$f" ] && source "$f"
+done
+unsetopt NULL_GLOB
