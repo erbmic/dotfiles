@@ -7,6 +7,11 @@ The technique consists in storing a Git bare repository in a "side" folder (like
 == Prerequisites
 
 The only pre-requisite is to install Git.
+And in case you want the automcompletion and syntax-highlighting run:
+
+[source,bash]
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
 
 == Start from scratch
 
